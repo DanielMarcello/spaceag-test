@@ -1,0 +1,14 @@
+.legendContentRow {
+  display: flex;
+  flex-direction: row;
+  height: 25px;
+}
+
+.colorValue {
+  width: 20px;
+  margin: 0px 10px 0px 0px;
+}
+
+.valueDescription {
+  margin: 3px 0px;
+}

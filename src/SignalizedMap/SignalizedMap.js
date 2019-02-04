@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import Crop from "./components/Crop";
+import Legend from "./components/Legend";
+import LegendControl from "./components/LegendControl";
 
 import "./css/SignalizedMap.css";
 
-import { Map, TileLayer } from "react-leaflet/lib";
+import { Map, ZoomControl, TileLayer } from "react-leaflet/lib";
 
 import jsonMapData from "./data/multifrut__calsa__arandanos__dias_sin_cosechar__2018_12_10.json";
 
@@ -28,12 +30,14 @@ class SignalizedMap extends Component {
 
   render() {
     return (
-      <div>
+      <div className="relative">
         <Map
           className="Map"
           center={[this.state.initialCoords.lng, this.state.initialCoords.lat]}
           zoom={16}
+          zoomControl={false}
         >
+          <ZoomControl position="bottomright" />
           <TileLayer
             attribution="Tiles &amp;copy; Esri &amp;mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
             url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
@@ -41,7 +45,9 @@ class SignalizedMap extends Component {
           {this.state.mapData.features.map(item => (
             <Crop key={item.properties.unit.id} feature={item} />
           ))}
+          {/* <LegendControl /> */}
         </Map>
+        <Legend className="absolute legendControl" />
       </div>
     );
   }
