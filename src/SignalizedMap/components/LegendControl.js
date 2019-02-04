@@ -29,7 +29,6 @@ class LegendControl extends MapControl {
   }
 
   componentDidMount() {
-    console.log(this);
     const { map } = this.props.leaflet;
     this.leafletElement.addTo(map);
   }
