@@ -28,7 +28,7 @@ class Crop extends Component {
     } else return "transparent";
   };
 
-  parsetoDatatype = (type, data) => {
+  parseToDatatype = (type, data) => {
     switch (type) {
       case "float":
         return data.toFixed(2);
@@ -52,7 +52,7 @@ class Crop extends Component {
         <Popup>
           <h2>
             {values.length > 0
-              ? `${this.parsetoDatatype(
+              ? `${this.parseToDatatype(
                   data_type,
                   values[0].value
                 )} ${measurement_unit}`
