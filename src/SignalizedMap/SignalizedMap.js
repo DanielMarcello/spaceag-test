@@ -43,7 +43,11 @@ class SignalizedMap extends Component {
             url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
           />
           {this.state.mapData.features.map(item => (
-            <Crop key={item.properties.unit.id} feature={item} />
+            <Crop
+              key={item.properties.unit.id}
+              feature={item}
+              setup={this.state.mapData.setup}
+            />
           ))}
           {/* <LegendControl /> */}
         </Map>

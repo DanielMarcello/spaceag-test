@@ -28,9 +28,19 @@ class Crop extends Component {
     } else return "transparent";
   };
 
+  parsetoDatatype = (type, data) => {
+    switch (type) {
+      case "float":
+        return data.toFixed(2);
+      default:
+        return data;
+    }
+  };
+
   render() {
     var { unit, values } = this.props.feature.properties;
     var { coordinates } = this.props.feature.geometry;
+    var { measurement_unit, data_type } = this.props.setup;
     return (
       <Polygon
         color="white"
@@ -42,7 +52,10 @@ class Crop extends Component {
         <Popup>
           <h2>
             {values.length > 0
-              ? values[0].value.toFixed(2) + " Día(s)"
+              ? `${this.parsetoDatatype(
+                  data_type,
+                  values[0].value
+                )} ${measurement_unit}`
               : "Sin Datos"}
           </h2>
           <h3>{unit.full_name}</h3>
