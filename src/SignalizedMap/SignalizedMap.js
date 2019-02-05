@@ -6,6 +6,7 @@ import LegendControl from "./components/LegendControl";
 import "./css/SignalizedMap.css";
 
 import { Map, ZoomControl, TileLayer } from "react-leaflet/lib";
+import "react-leaflet-fullscreen-control";
 
 import jsonMapData from "./data/multifrut__calsa__arandanos__dias_sin_cosechar__2018_12_10.json";
 
@@ -34,8 +35,9 @@ class SignalizedMap extends Component {
         <Map
           className="Map"
           center={[this.state.initialCoords.lng, this.state.initialCoords.lat]}
-          zoom={16}
+          zoom={this.state.initialCoords.zoom}
           zoomControl={false}
+          fullscreenControl={{ position: "bottomright" }}
         >
           <ZoomControl position="bottomright" />
           <TileLayer
@@ -52,6 +54,7 @@ class SignalizedMap extends Component {
           {/* <LegendControl /> */}
         </Map>
         <Legend className="absolute legendControl" />
+        {/* <FullSizeMap className="absolute fullSizeMap" /> */}
       </div>
     );
   }

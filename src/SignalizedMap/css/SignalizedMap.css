@@ -27,3 +27,13 @@
   border-radius: 10px;
   box-shadow: 1px 1px 4px;
 }
+
+.fullSizeMap {
+  z-index: 2;
+  background-color: #ffffff;
+  margin: 0px;
+  top: 80vh;
+  right: 20px;
+  padding: 10px;
+  border-radius: 10px;
+}
