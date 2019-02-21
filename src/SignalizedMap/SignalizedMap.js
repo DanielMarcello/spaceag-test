@@ -51,9 +51,9 @@ class SignalizedMap extends Component {
               setup={this.state.mapData.setup}
             />
           ))}
-          {/* <LegendControl /> */}
+          <LegendControl className="legendControl" />
         </Map>
-        <Legend className="absolute legendControl" />
+        {/* <Legend className="absolute legendControl" /> */}
         {/* <FullSizeMap className="absolute fullSizeMap" /> */}
       </div>
     );
