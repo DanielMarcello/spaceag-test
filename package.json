@@ -7,7 +7,6 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-leaflet": "^2.2.0",
-    "react-leaflet-control": "^2.0.0",
     "react-leaflet-fullscreen-control": "^0.0.4",
     "react-scripts": "2.1.3"
   },
