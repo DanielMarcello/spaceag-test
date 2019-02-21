@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import L from "leaflet";
 import { MapControl, withLeaflet } from "react-leaflet/lib";
 
+import "../css/LegendControl.css";
+
 class LegendControl extends MapControl {
   // note we're extending MapControl from react-leaflet, not Component from react
 

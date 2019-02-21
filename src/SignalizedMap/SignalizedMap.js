@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Crop from "./components/Crop";
-import Legend from "./components/Legend";
 import LegendControl from "./components/LegendControl";
 
 import "./css/SignalizedMap.css";
@@ -31,31 +30,27 @@ class SignalizedMap extends Component {
 
   render() {
     return (
-      <div className="relative">
-        <Map
-          className="Map"
-          center={[this.state.initialCoords.lng, this.state.initialCoords.lat]}
-          zoom={this.state.initialCoords.zoom}
-          zoomControl={false}
-          fullscreenControl={{ position: "bottomright" }}
-        >
-          <ZoomControl position="bottomright" />
-          <TileLayer
-            attribution="Tiles &amp;copy; Esri &amp;mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
-            url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+      <Map
+        className="Map"
+        center={[this.state.initialCoords.lng, this.state.initialCoords.lat]}
+        zoom={this.state.initialCoords.zoom}
+        zoomControl={false}
+        fullscreenControl={{ position: "bottomright" }}
+      >
+        <ZoomControl position="bottomright" />
+        <TileLayer
+          attribution="Tiles &amp;copy; Esri &amp;mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
+          url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+        />
+        {this.state.mapData.features.map(item => (
+          <Crop
+            key={item.properties.unit.id}
+            feature={item}
+            setup={this.state.mapData.setup}
           />
-          {this.state.mapData.features.map(item => (
-            <Crop
-              key={item.properties.unit.id}
-              feature={item}
-              setup={this.state.mapData.setup}
-            />
-          ))}
-          <LegendControl className="legendControl" />
-        </Map>
-        {/* <Legend className="absolute legendControl" /> */}
-        {/* <FullSizeMap className="absolute fullSizeMap" /> */}
-      </div>
+        ))}
+        <LegendControl className="legendControl" />
+      </Map>
     );
   }
 }
