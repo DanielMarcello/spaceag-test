@@ -1,11 +1,10 @@
 .Map {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
+  height: 100%;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
+  margin: 0;
   z-index: 1;
 }
 
@@ -18,22 +17,8 @@
 }
 
 .legendControl {
-  z-index: 2;
   background-color: #f3ecef;
-  margin: 0px;
-  top: 80vh;
-  left: 20px;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 1px 1px 4px;
-}
-
-.fullSizeMap {
-  z-index: 2;
-  background-color: #ffffff;
-  margin: 0px;
-  top: 80vh;
-  right: 20px;
-  padding: 10px;
-  border-radius: 10px;
 }

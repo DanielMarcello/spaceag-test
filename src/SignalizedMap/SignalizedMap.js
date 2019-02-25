@@ -19,13 +19,21 @@ class SignalizedMap extends Component {
         lng: -8.587349402973743,
         zoom: 16
       },
-      mapData: {}
+      mapData: {},
+      mapHeight: "100px"
     };
   }
 
   componentWillMount() {
     var mapData = jsonMapData;
     this.setState({ mapData });
+  }
+
+  componentDidMount() {
+    var mapHeight = `
+      ${window.innerHeight -
+        document.getElementsByClassName("Map")[0].offsetTop}px`;
+    this.setState({ mapHeight });
   }
 
   render() {

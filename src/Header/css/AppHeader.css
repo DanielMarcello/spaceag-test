@@ -1,0 +1,20 @@
+.AppHeader {
+  width: 100%;
+  padding: 0 15px;
+  margin-right: auto;
+  margin-left: auto;
+  z-index: 2;
+}
+
+.navbar {
+  padding: 0.3125rem 1rem 0.3125rem 1rem;
+  height: 55px;
+  display: flex;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.rightPart {
+  margin-left: 10px;
+}

@@ -1,0 +1,14 @@
+.CropSelection {
+  display: flex;
+  flex-direction: row;
+  margin-top: 6px;
+}
+
+.caretRight {
+  margin: 10px;
+}
+
+.buttonDD button {
+  background-color: #dfdfdf;
+  border-color: #dfdfdf;
+}
